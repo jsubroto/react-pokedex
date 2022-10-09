@@ -14,14 +14,14 @@ export const Pokemon = ({
 	const [pokemonData, setPokemonData] = useState<PokemonData>()
 
 	useEffect(() => {
-		fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
+		fetch(url)
 			.then(res => res.json())
 			.then(data => setPokemonData({
 				id: data.id,
 				imageUrl: data.sprites.front_default,
 				types: data.types
 			}))
-	}, [name])
+	}, [url])
 
 	const typeElements = pokemonData?.types.map(type => 
 		<div key={type.type.name}>{type.type.name}</div>
