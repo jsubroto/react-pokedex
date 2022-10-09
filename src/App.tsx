@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Pokemons } from './types';
 import './App.css';
 
-function App() {
+const App = () => {
   const [pokemons, setPokemons] = useState<Pokemons>([])
 
   useEffect(() => {
