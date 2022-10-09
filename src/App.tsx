@@ -18,7 +18,7 @@ const App = () => {
 
   return (
     <div>
-      <h1>Pokédex</h1>
+      <h1 className='text-2xl text-center mt-4'>Pokédex</h1>
       <ul>
         {pokemonElements}
       </ul>
