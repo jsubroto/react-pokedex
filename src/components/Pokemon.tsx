@@ -23,7 +23,17 @@ export const Pokemon = ({
 			}))
 	}, [name])
 
+	const typeElements = pokemonData?.types.map(type => 
+		<div key={type.type.name}>{type.type.name}</div>
+	)
+
 	return (
-		<li>{name} {pokemonData?.id}: {pokemonData?.types.map(type => type.type.name).join(', ')}</li>
+		<div>
+			<h1>{name} #{pokemonData?.id}</h1>
+			<div>
+				{typeElements}
+			</div>
+			<img src={pokemonData?.imageUrl} alt={name} />
+		</div>
 	)
 }
