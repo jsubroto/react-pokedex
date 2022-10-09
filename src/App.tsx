@@ -19,9 +19,9 @@ const App = () => {
   return (
     <div>
       <h1 className='text-2xl text-center mt-4'>Pokédex</h1>
-      <ul>
+      <div>
         {pokemonElements}
-      </ul>
+      </div>
     </div>
   );
 }
