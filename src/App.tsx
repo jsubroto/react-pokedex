@@ -1,11 +1,13 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 
 function App() {
+  const [pokemons, setPokemons] = useState([])
+
   useEffect(() => {
     fetch('https://pokeapi.co/api/v2/pokemon/')
       .then(res => res.json())
-      .then(data => console.log(data))
+      .then(setPokemons)
   }, [])
 
   return (
