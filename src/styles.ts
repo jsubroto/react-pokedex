@@ -2,10 +2,10 @@ export const responsiveGrid = `
   gap-6
   sm:grid
   sm:grid-cols-2
-  md:grid-cols-3
+  md:mx-16
   lg:grid-cols-4
-  xl:grid-cols-5
-  2xl:grid-cols-6
+  xl:mx-40
+  2xl:mx-60
 `
 export const buttonStyle = `
   pointer:cursor 
