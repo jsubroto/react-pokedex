@@ -17,7 +17,7 @@ export const Pokemon = ({
 			.then(data => 
 				setPokemonData({
 					id: data.id,
-					imageUrl: data.sprites.front_default,
+					imageUrl: data.sprites.other['official-artwork'].front_default,
 					types: data.types.map((type: { type: { name: string } }) => 
 						type.type.name
 					)
