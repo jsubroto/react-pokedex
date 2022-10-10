@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
+import { Pagination } from './components/Pagination'
 import { Pokemon } from './components/Pokemon'
 import { fetchJson } from './lib/fetch'
-import { buttonStyle, disabledButtonStyle, responsiveGrid } from './styles'
+import { responsiveGrid } from './styles'
 import { PokemonProps } from './types'
 
 const App = () => {
@@ -28,25 +29,16 @@ const App = () => {
     <Pokemon key={pkmn.name} name={pkmn.name} url={pkmn.url}/>
   )
 
+  const handlePagination = (url: string) => setUrl(url)
+
   return (
     <div className='max-w-[86%] mx-auto'>
       <h1 className='text-3xl text-center mt-4'>Pokédex</h1>
-      <div className='flex justify-center'>
-        <button 
-          className={`${buttonStyle} ${previousUrl ?? disabledButtonStyle}`} 
-          onClick={() => setUrl(previousUrl)} 
-          disabled={!previousUrl}
-        >
-          Back
-        </button>
-        <button 
-          className={`${buttonStyle} ${nextUrl ?? disabledButtonStyle}`} 
-          onClick={() => setUrl(nextUrl)} 
-          disabled={!nextUrl}
-        >
-          Next
-        </button>
-      </div>
+      <Pagination 
+        handleClick={handlePagination} 
+        prevUrl={previousUrl} 
+        nextUrl={nextUrl}
+      />
       <div className={responsiveGrid}>
         {pokemonElements}
       </div>

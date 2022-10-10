@@ -8,3 +8,9 @@ export type PokemonData = {
 	imageUrl: string
 	types: string[]
 }
+
+export type PaginationProps = {
+	handleClick: Function
+	prevUrl: string
+	nextUrl: string
+}
