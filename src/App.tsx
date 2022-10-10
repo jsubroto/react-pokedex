@@ -1,16 +1,7 @@
-import { useEffect, useState } from 'react';
-import { Pokemon } from './components/Pokemon';
-import { PokemonProps } from './types';
-
-const responsiveGrid = `
-  gap-6
-  sm:grid
-  sm:grid-cols-2
-  md:grid-cols-3
-  lg:grid-cols-4
-  xl:grid-cols-5
-  2xl:grid-cols-6
-`
+import { useEffect, useState } from 'react'
+import { Pokemon } from './components/Pokemon'
+import { responsiveGrid } from './styles'
+import { PokemonProps } from './types'
 
 const App = () => {
   const [pokemons, setPokemons] = useState<PokemonProps[]>([])
@@ -35,4 +26,4 @@ const App = () => {
   );
 }
 
-export default App;
+export default App

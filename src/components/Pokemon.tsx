@@ -1,34 +1,8 @@
-import { useEffect, useState } from "react";
-import { PokemonProps } from "../types";
-
-type PokemonData = {
-	id: number
-	imageUrl: string
-	types: { type: { name: string } }[]
-}
+import { useEffect, useState } from 'react'
+import { typeColor } from '../constants'
+import { PokemonData, PokemonProps } from '../types'
 
 const capitalize = (str: string) => str[0].toUpperCase() + str.slice(1)
-
-const typeColor = new Map([
-	['bug', '#A6B91A'],
-	['dark', '#705746'],
-	['dragon', '#6F35FC'],
-	['electric', '#F7D02C'],
-	['fairy', '#D685AD'],
-	['fighting', '#C22E28'],
-	['fire', '#EE8130'],
-	['flying', '#A98FF3'],
-	['ghost', '#735797'],
-	['grass', '#7AC74C'],
-	['ground', '#E2BF65'],
-	['ice', '#96D9D6'],
-	['normal', '#A8A77A'],
-	['poison', '#A33EA1'],
-	['psychic', '#F95587'],
-	['rock', '#B6A136'],
-	['steel', '#B7B7CE'],
-	['water', '#6390F0'],
-])
 
 export const Pokemon = ({
 	name,
