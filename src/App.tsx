@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Pokemon } from './components/Pokemon';
 import { PokemonProps } from './types';
-import './App.css';
 
 const App = () => {
   const [pokemons, setPokemons] = useState<PokemonProps[]>([])
