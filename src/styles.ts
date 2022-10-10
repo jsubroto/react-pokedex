@@ -9,10 +9,18 @@ export const responsiveGrid = `
 `
 export const buttonStyle = `
   pointer:cursor 
-  bg-gray-200 
+  hover:bg-gray-500
+  hover:text-white
+  bg-gray-300 
   rounded
   text-lg
   px-3
   pb-1
   m-2 
+`
+
+export const disabledButtonStyle = `
+  hover:bg-gray-300 
+  hover:text-black 
+  opacity-25
 `

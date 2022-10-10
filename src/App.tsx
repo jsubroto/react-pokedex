@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Pokemon } from './components/Pokemon'
 import { fetchJson } from './lib/fetch'
-import { buttonStyle, responsiveGrid } from './styles'
+import { buttonStyle, disabledButtonStyle, responsiveGrid } from './styles'
 import { PokemonProps } from './types'
 
 const App = () => {
@@ -32,8 +32,20 @@ const App = () => {
     <div className='max-w-[86%] mx-auto'>
       <h1 className='text-3xl text-center mt-4'>Pokédex</h1>
       <div className='flex justify-center'>
-        {previousUrl && <button className={buttonStyle} onClick={() => setUrl(previousUrl)}>Back</button>}
-        {nextUrl && <button className={buttonStyle} onClick={() => setUrl(nextUrl)}>Next</button>}
+        <button 
+          className={`${buttonStyle} ${previousUrl ?? disabledButtonStyle}`} 
+          onClick={() => setUrl(previousUrl)} 
+          disabled={!previousUrl}
+        >
+          Back
+        </button>
+        <button 
+          className={`${buttonStyle} ${nextUrl ?? disabledButtonStyle}`} 
+          onClick={() => setUrl(nextUrl)} 
+          disabled={!nextUrl}
+        >
+          Next
+        </button>
       </div>
       <div className={responsiveGrid}>
         {pokemonElements}
