@@ -7,6 +7,8 @@ type PokemonData = {
 	types: { type: { name: string } }[]
 }
 
+const capitalize = (str: string) => str[0].toUpperCase() + str.slice(1)
+
 export const Pokemon = ({
 	name,
 	url
@@ -36,7 +38,7 @@ export const Pokemon = ({
 			/>
 			<div className='mx-2 mb-10'>
 				<p className='text-xs font-bold text-gray-400'>#{pokemonData?.id.toString().padStart(3, '0')}</p>
-				<h1 className='mt-2 font-medium text-xl'>{name}</h1>
+				<h1 className='mt-1 font-medium text-xl'>{capitalize(name)}</h1>
 				<div>
 					{typeElements}
 				</div>
