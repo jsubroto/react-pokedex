@@ -35,7 +35,7 @@ export const Pokemon = ({
 				alt={name} 
 			/>
 			<div className='mx-2 mb-10'>
-				<p>#{pokemonData?.id}</p>
+				<p>#{pokemonData?.id.toString().padStart(3, '0')}</p>
 				<h1>{name}</h1>
 				<div>
 					{typeElements}
