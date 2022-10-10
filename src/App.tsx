@@ -18,7 +18,7 @@ const App = () => {
   return (
     <div className='max-w-[86%] mx-auto'>
       <h1 className='text-2xl text-center my-4'>Pokédex</h1>
-      <div>
+      <div className='sm:grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6'>
         {pokemonElements}
       </div>
     </div>
