@@ -31,8 +31,8 @@ const App = () => {
   return (
     <div className='max-w-[86%] mx-auto'>
       <h1 className='text-2xl text-center my-4'>Pokédex</h1>
-      <button onClick={() => setUrl(previousUrl)}>Back</button>
-      <button onClick={() => setUrl(nextUrl)}>Next</button>
+      {previousUrl && <button onClick={() => setUrl(previousUrl)}>Back</button>}
+      {nextUrl && <button onClick={() => setUrl(nextUrl)}>Next</button>}
       <div className={responsiveGrid}>
         {pokemonElements}
       </div>
