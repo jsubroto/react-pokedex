@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { typeColor } from '../constants'
 import { PokemonData, PokemonProps } from '../types'
 
+const padWithZeroes = (id: number) => id.toString().padStart(3, '0')
 const capitalize = (str: string) => str[0].toUpperCase() + str.slice(1)
 
 export const Pokemon = ({
@@ -42,8 +43,12 @@ export const Pokemon = ({
 				alt={name} 
 			/>
 			<div className='mx-2 mb-12'>
-				<p className='text-xs font-bold text-gray-400'>#{pokemonData?.id.toString().padStart(3, '0')}</p>
-				<h1 className='my-1 font-medium text-xl'>{capitalize(name)}</h1>
+				<p className='text-xs font-bold text-gray-400'>
+					#{padWithZeroes(pokemonData?.id ?? 0)}
+				</p>
+				<h1 className='my-1 font-medium text-xl'>
+					{capitalize(name)}
+				</h1>
 				<div className='flex gap-1'>
 					{typeElements}
 				</div>
