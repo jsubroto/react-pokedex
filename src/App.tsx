@@ -41,6 +41,11 @@ const App = () => {
       <div className={responsiveGrid}>
         {pokemonElements}
       </div>
+      <footer className='mx-auto border-t md:w-2/3'>
+        <p className='text-center my-2'>
+          Copyright (c) 2022 Jaimes Subroto
+        </p>
+      </footer>
     </div>
   );
 }
