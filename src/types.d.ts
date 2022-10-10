@@ -6,5 +6,5 @@ export type PokemonProps = {
 export type PokemonData = {
 	id: number
 	imageUrl: string
-	types: { type: { name: string } }[]
+	types: string[]
 }

@@ -13,20 +13,24 @@ export const Pokemon = ({
 	useEffect(() => {
 		fetch(url)
 			.then(res => res.json())
-			.then(data => setPokemonData({
-				id: data.id,
-				imageUrl: data.sprites.front_default,
-				types: data.types
-			}))
+			.then(data => 
+				setPokemonData({
+					id: data.id,
+					imageUrl: data.sprites.front_default,
+					types: data.types.map((type: { type: { name: string } }) => 
+						type.type.name
+					)
+				})
+			)
 	}, [url])
 
 	const typeElements = pokemonData?.types.map(type => 
 		<div 
-			key={type.type.name}
+			key={type}
 			className='w-28 text-white rounded'
-			style={{ backgroundColor: typeColor.get(type.type.name) }}
+			style={{ backgroundColor: typeColor.get(type) }}
 		>
-			<p className='text-xs text-center pb-0.5'>{type.type.name}</p>
+			<p className='text-xs text-center pb-0.5'>{type}</p>
 		</div>
 	)
 
