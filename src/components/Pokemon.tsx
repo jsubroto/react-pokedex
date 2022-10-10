@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { typeColor } from '../constants'
+import { fetchJson } from '../lib/fetch'
 import { PokemonData, PokemonProps } from '../types'
 
 const padWithZeroes = (id: number) => id.toString().padStart(3, '0')
@@ -12,8 +13,7 @@ export const Pokemon = ({
 	const [pokemonData, setPokemonData] = useState<PokemonData | null>(null)
 
 	useEffect(() => {
-		fetch(url)
-			.then(res => res.json())
+		fetchJson(url)
 			.then(data => 
 				setPokemonData({
 					id: data.id,

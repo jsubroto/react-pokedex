@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Pokemon } from './components/Pokemon'
+import { fetchJson } from './lib/fetch'
 import { responsiveGrid } from './styles'
 import { PokemonProps } from './types'
 
@@ -7,8 +8,7 @@ const App = () => {
   const [pokemons, setPokemons] = useState<PokemonProps[]>([])
 
   useEffect(() => {
-    fetch('https://pokeapi.co/api/v2/pokemon/')
-      .then(res => res.json())
+    fetchJson('https://pokeapi.co/api/v2/pokemon/')
       .then(data => setPokemons(data.results))
   }, [])
 
