@@ -13,16 +13,21 @@ export const Pokemon = ({
 	const [pokemonData, setPokemonData] = useState<PokemonData | null>(null)
 
 	useEffect(() => {
-		fetchJson(url)
-			.then(data => 
-				setPokemonData({
+		const getPokemon = async () => {
+      try {
+        const data = await fetchJson(url)
+        setPokemonData({
 					id: data.id,
 					imageUrl: data.sprites.other['official-artwork'].front_default,
 					types: data.types.map((type: { type: { name: string } }) => 
 						type.type.name
 					)
 				})
-			)
+      } catch (e) {
+        console.error(e)
+      }
+    }
+    getPokemon()
 	}, [url])
 
 	const typeElements = pokemonData?.types.map(type => 

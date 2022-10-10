@@ -8,8 +8,15 @@ const App = () => {
   const [pokemons, setPokemons] = useState<PokemonProps[]>([])
 
   useEffect(() => {
-    fetchJson('https://pokeapi.co/api/v2/pokemon/')
-      .then(data => setPokemons(data.results))
+    const getPokemons = async () => {
+      try {
+        const data = await fetchJson('https://pokeapi.co/api/v2/pokemon/')
+        setPokemons(data.results)
+      } catch (e) {
+        console.error(e)
+      }
+    }
+    getPokemons()
   }, [])
 
   const pokemonElements = pokemons.map(pkmn => 
