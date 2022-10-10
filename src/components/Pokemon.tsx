@@ -47,7 +47,13 @@ export const Pokemon = ({
 	}, [url])
 
 	const typeElements = pokemonData?.types.map(type => 
-		<div key={type.type.name}>{type.type.name}</div>
+		<div 
+			key={type.type.name}
+			className='w-28 text-white rounded'
+			style={{ backgroundColor: typeColor.get(type.type.name) }}
+		>
+			<p className='text-xs text-center pb-0.5'>{type.type.name}</p>
+		</div>
 	)
 
 	return (
@@ -57,10 +63,10 @@ export const Pokemon = ({
 				src={pokemonData?.imageUrl} 
 				alt={name} 
 			/>
-			<div className='mx-2 mb-10'>
+			<div className='mx-2 mb-12'>
 				<p className='text-xs font-bold text-gray-400'>#{pokemonData?.id.toString().padStart(3, '0')}</p>
-				<h1 className='mt-1 font-medium text-xl'>{capitalize(name)}</h1>
-				<div>
+				<h1 className='my-1 font-medium text-xl'>{capitalize(name)}</h1>
+				<div className='flex gap-1'>
 					{typeElements}
 				</div>
 			</div>
