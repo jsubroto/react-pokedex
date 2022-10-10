@@ -16,8 +16,8 @@ const App = () => {
   )
 
   return (
-    <div>
-      <h1 className='text-2xl text-center mt-4'>Pokédex</h1>
+    <div className='max-w-[86%] mx-auto'>
+      <h1 className='text-2xl text-center my-4'>Pokédex</h1>
       <div>
         {pokemonElements}
       </div>
