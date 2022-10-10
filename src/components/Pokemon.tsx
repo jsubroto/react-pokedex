@@ -41,23 +41,27 @@ export const Pokemon = ({
 	)
 
 	return (
-		<div>
-			<img
-				className='w-full bg-gray-100 rounded' 
-				src={pokemonData?.imageUrl} 
-				alt={name} 
-			/>
-			<div className='mx-2 mb-12'>
-				<p className='text-xs font-bold text-gray-400'>
-					#{padWithZeroes(pokemonData?.id ?? 0)}
-				</p>
-				<h1 className='my-1 font-medium text-xl'>
-					{capitalize(name)}
-				</h1>
-				<div className='flex gap-1'>
-					{typeElements}
+		<>
+			{pokemonData?.imageUrl && 
+				<div>
+					<img
+						className='w-full bg-gray-100 rounded' 
+						src={pokemonData?.imageUrl} 
+						alt={name} 
+					/>
+					<div className='mx-2 mb-12'>
+						<p className='text-xs font-bold text-gray-400'>
+							#{padWithZeroes(pokemonData?.id ?? 0)}
+						</p>
+						<h1 className='my-1 font-medium text-xl'>
+							{capitalize(name)}
+						</h1>
+						<div className='flex gap-1'>
+							{typeElements}
+						</div>
+					</div>
 				</div>
-			</div>
-		</div>
+			}
+		</>
 	)
 }
