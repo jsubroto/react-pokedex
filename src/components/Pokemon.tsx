@@ -29,7 +29,11 @@ export const Pokemon = ({
 
 	return (
 		<div>
-			<img src={pokemonData?.imageUrl} alt={name} />
+			<img
+				className='w-full bg-gray-100 rounded' 
+				src={pokemonData?.imageUrl} 
+				alt={name} 
+			/>
 			<p>#{pokemonData?.id}</p>
 			<h1>{name}</h1>
 			<div>
