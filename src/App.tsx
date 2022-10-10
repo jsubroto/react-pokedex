@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Pagination } from './components/Pagination'
-import { Pokemon } from './components/Pokemon'
+import { Pagination, Pokemon } from './components/index'
 import { fetchJson } from './lib/fetch'
 import { responsiveGrid } from './styles'
 import { PokemonProps } from './types'
