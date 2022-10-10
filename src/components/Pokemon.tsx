@@ -9,7 +9,7 @@ export const Pokemon = ({
 	name,
 	url
 }: PokemonProps) => {
-	const [pokemonData, setPokemonData] = useState<PokemonData>()
+	const [pokemonData, setPokemonData] = useState<PokemonData | null>(null)
 
 	useEffect(() => {
 		fetch(url)
