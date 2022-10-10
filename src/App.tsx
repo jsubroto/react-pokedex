@@ -2,6 +2,16 @@ import { useEffect, useState } from 'react';
 import { Pokemon } from './components/Pokemon';
 import { PokemonProps } from './types';
 
+const responsiveGrid = `
+  gap-6
+  sm:grid
+  sm:grid-cols-2
+  md:grid-cols-3
+  lg:grid-cols-4
+  xl:grid-cols-5
+  2xl:grid-cols-6
+`
+
 const App = () => {
   const [pokemons, setPokemons] = useState<PokemonProps[]>([])
 
@@ -18,7 +28,7 @@ const App = () => {
   return (
     <div className='max-w-[86%] mx-auto'>
       <h1 className='text-2xl text-center my-4'>Pokédex</h1>
-      <div className='sm:grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6'>
+      <div className={responsiveGrid}>
         {pokemonElements}
       </div>
     </div>
