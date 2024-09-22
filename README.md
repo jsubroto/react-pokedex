@@ -6,7 +6,7 @@ React Pokédex is a mobile-first responsive web-based UI for those wanting to vi
 
 ## Screenshot
 
-![Screenshot](https://raw.githubusercontent.com/jsubroto/react-pokedex/main/sceenshot.png)
+![Screenshot](https://raw.githubusercontent.com/jsubroto/react-pokedex/refs/heads/main/screenshot.png)
 
 ## Technologies
 
